@@ -1,6 +1,6 @@
-# Проект Blog
+# Бэкенд часть проекта Blog
 
-Технологии:
+## Технологии
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
@@ -10,3 +10,21 @@
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
 ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
+
+## Описание проекта
+
+Проект представляет собой веб-приложение, которое позволяет пользователям создавать, редактировать и удалять свои посты. Также реализованы функции авторизации и регистрации пользователей.
+
+## Функциональность
+
+- **Авторизация и регистрация:** Пользователи могут создавать аккаунты и входить в систему с использованием своих учетных данных.
+
+- **Создание постов:** Пользователи могут создавать новые посты, указывая заголовок, содержание и теги.
+
+- **Редактирование и удаление постов:** Зарегистрированные пользователи могут редактировать и удалять свои собственные посты.
+
+- **Сортировка постов:** Пользователи могут сортировать посты по тегам, популярности или новизне.
+
+
+
+
