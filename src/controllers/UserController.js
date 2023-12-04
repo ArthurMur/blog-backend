@@ -1,16 +1,11 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
-import { validationResult } from 'express-validator';
 import UserModel from '../models/User.js'
 
-/* Обработчик маршрута POST '/auth/register'. Регистрация пользователя. registerValidation - функция промежуточной обработки (middleware), которая выполняет валидацию данных, 
-отправленных клиентом. req и res - это объекты представляющие запрос и ответ соответственно. */ 
+/* Обработчик маршрута POST '/auth/register'. Регистрация пользователя. registerValidation - функция промежуточной обработки (middleware),
+ которая выполняет валидацию данных, отправленных клиентом. req и res - это объекты представляющие запрос и ответ соответственно. */ 
 export const register = async (req, res) => {
   try {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json(errors.array());
-    }
     
     const password = req.body.password; // Объявляется и инициализируется переменная password, которая получается из тела запроса (req.body)
 
