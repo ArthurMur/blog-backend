@@ -22,7 +22,7 @@ export const register = async (req, res) => {
     email: req.body.email,
     passwordHash: hash,
     fullName: req.body.fullName,
-    avatarUrl: req.body.avatarUrl,
+    avatarUrl: req.body.avatarUrl,z
   });
   
   const user = await doc.save(); //Сохраняем пользователя в базу данных
@@ -39,10 +39,8 @@ export const register = async (req, res) => {
     }
 }
 
-/* Обработчик маршрута GET '/auth/me'. Получение информацию о пользователe.  
-  Функция checkAuth (проверяет аутентификацию пользователя) является промежуточным обработчиком, 
-  который будет выполняться перед основным обработчиком этого маршрута. */ 
-export const login = async (req, res) => { // Обработчик маршрута POST '/auth/login'. Атвторизация пользователя.
+/* Обработчик маршрута GET '/auth/me'. Получение информацию о пользователe. */ 
+export const login = async (req, res) => { 
   try {
     const user = await UserModel.findOne({ email: req.body.email }); // Получаем объект пользователя по его email
 

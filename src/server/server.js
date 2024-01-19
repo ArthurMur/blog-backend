@@ -1,8 +1,8 @@
 import express from 'express'
 import mongoose from 'mongoose';
 import multer from 'multer';
-import {registerValidation, loginValidation, postCreateValidation} from '../validations/validations.js'
-import { UserController, PostController } from '../controllers/index.js';
+import {registerValidation, loginValidation, postCreateValidation, commentCreateValidation} from '../validations/validations.js'
+import { UserController, PostController, CommentController } from '../controllers/index.js';
 import  {handleValidationErrors, checkAuth} from '../utils/index.js';
 import cors from 'cors';
 
@@ -46,8 +46,11 @@ app.delete('/posts/:id', checkAuth, PostController.remove); // Удаление 
 app.patch('/posts/:id', checkAuth, postCreateValidation, handleValidationErrors, PostController.update); // Обновление поста
 app.get('/tags', PostController.getLastTags); // Получение всех тегов
 app.get('/posts/tags', PostController.getLastTags); // Получение всех тегов
+app.post('/comments', checkAuth, commentCreateValidation, CommentController.createComment);
+app.get('/comments/:postId', checkAuth, commentCreateValidation, CommentController.getCommentsByPost);
+app.delete('/comments/:commentId', checkAuth, commentCreateValidation, CommentController.deleteComment);
 app.post('/upload', checkAuth, upload.single('image'), (req, res) => {
-  // Отправка JSON-ответа с URL загруженного файла
+  // Отправка JSON-ответа с URL загруженного файлаz
   res.json({
     url: `/upload/${req.file.originalname}`,
   });

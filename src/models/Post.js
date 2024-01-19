@@ -5,7 +5,6 @@ const PostSchema = new mongoose.Schema(
     title: {
       type: String,
       required: true,
-
     },
     text: {
       type: String,
@@ -26,6 +25,7 @@ const PostSchema = new mongoose.Schema(
       required: true,
     },
     imageUrl: String,
+    comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }]
   }, 
   { 
     timestamps: true 

@@ -3,7 +3,7 @@ import PostModel from '../models/Post.js'
 // Получить все посты
 export const getPosts = async (req, res) => {
   try {
-    const posts = await PostModel.find().populate({ path: "user", select: ["name", "avatar"] }).exec();
+    const posts = await PostModel.find().populate({ path: "user", select: ["fullName", "avatarUrl"] }).exec();
     res.json(posts);
   } catch (err) {
     console.error(err);
